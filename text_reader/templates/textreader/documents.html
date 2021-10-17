@@ -23,6 +23,18 @@
               {{ document_form }}
               <button type="submit">Submit</button>
             </form>
+
+            <br/><br/>
+            <p>-----------</p>
+
+            <ol>
+                {% for document in documents %}
+                    <li><a href="{{ document.docfile.url }}">{{ document.document_file.name }}: {{ document.description }}</li>
+                {% endfor %}
+            </ol>
+
+            <p>-----------</p>
+            <br/><br/>
             
             {% if not user.is_authenticated %}
                 <p><a href="{% url 'login' %}">{% trans "Please Login" %}</a>.</p>
