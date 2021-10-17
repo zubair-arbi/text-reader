@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 
+from django.utils.translation import gettext_lazy as _
 from model_utils.models import TimeStampedModel
 
 
@@ -47,6 +48,6 @@ class Document(TimeStampedModel):
     document_file = models.FileField(
         verbose_name=_('Document for text reader'),
         upload_to=document_file_path,
-        validators=[validate_report],
+        validators=[validate_document],
         help_text=_('Upload document for parsing and text reader.')
     )
