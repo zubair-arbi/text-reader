@@ -18,7 +18,7 @@
                 {% trans "Here are all the files uploaded for text reader."%}
             </p>
 
-            <form method="post" novalidate>
+            <form method="post" enctype="multipart/form-data">
               {% csrf_token %}
               {{ document_form }}
               <button type="submit">Submit</button>
@@ -29,7 +29,9 @@
 
             <ol>
                 {% for document in documents %}
-                    <li><a href="{{ document.docfile.url }}">{{ document.document_file.name }}: {{ document.description }}</li>
+                    <li>
+                        <a href="{{ document.docfile.url }}">{{ document.document_file.name }}</a>: {{ document.description }}
+                    </li>
                 {% endfor %}
             </ol>
 
