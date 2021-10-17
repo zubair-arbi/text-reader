@@ -32,6 +32,7 @@ urlpatterns = [
     # Include apps API urls without prefix so that we can preserve the
     # patterns for django "{app_namespace}/" and DRF "api/v1/{app_namespace}"
     url(r'', include('text_reader.apps.users.urls', namespace='users')),
+    url(r'', include('text_reader.apps.textreader.urls', namespace='textreader')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
