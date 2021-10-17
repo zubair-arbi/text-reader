@@ -8,6 +8,6 @@ class DocumentUploadForm(forms.Form):
         help_text='Optional description for the uploaded document.',
         required=False
     )
-    document = forms.FileField(
+    document_file = forms.FileField(
         label='Select a file'
     )
