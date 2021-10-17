@@ -3,6 +3,7 @@ import logging
 from django.contrib import messages
 from django.shortcuts import render
 
+from text_reader.apps.textreader.forms import DocumentUploadForm
 from text_reader.apps.textreader.models import Document
 
 LOGGER = logging.getLogger(__name__)
@@ -20,6 +21,7 @@ def documents_view(request):
     documents = Document.objects.all()
     context = {
         'documents': documents,
+        'document_form': DocumentUploadForm(),
     }
 
     return render(request, 'textreader/documents.html', context)

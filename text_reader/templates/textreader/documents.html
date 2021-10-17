@@ -17,6 +17,12 @@
             <p class="text-center">
                 {% trans "Here are all the files uploaded for text reader."%}
             </p>
+
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {{ document_form }}
+              <button type="submit">Submit</button>
+            </form>
             
             {% if not user.is_authenticated %}
                 <p><a href="{% url 'login' %}">{% trans "Please Login" %}</a>.</p>
