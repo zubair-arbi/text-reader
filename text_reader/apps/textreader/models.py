@@ -37,7 +37,7 @@ def validate_document(value):
 
     ext = os.path.splitext(value.name)[1]
     if not ext.lower() in valid_extensions:
-        raise ValidationError('Please upload a valid png file')
+        raise ValidationError('Please upload a valid png or jpg file')
 
 
 class Document(TimeStampedModel):
