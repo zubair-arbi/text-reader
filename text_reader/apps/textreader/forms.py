@@ -9,5 +9,5 @@ class DocumentUploadForm(forms.Form):
         required=False
     )
     document_file = forms.FileField(
-        label='Select a file'
+        label='Select a jpg or png file for upload'
     )
