@@ -17,6 +17,7 @@ def documents_view(request):
     """
     user_full_name = ''
     if not request.user.is_authenticated:
+        LOGGER.info('User %s is not authenticated' % request.user)
         # TODO: return to login page
         return None
 
