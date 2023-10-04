@@ -33,7 +33,7 @@ def validate_document(value):
     """
     Validate the uploaded files.
     """
-    valid_extensions = ['.png', ]
+    valid_extensions = ['.png', 'jpg']
 
     ext = os.path.splitext(value.name)[1]
     if not ext.lower() in valid_extensions:
